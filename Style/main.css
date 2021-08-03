@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, right top, from(#e1eec3), to(#f05053));
+  background: linear-gradient(to right, #e1eec3, #f05053);
+  height: 100%;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body header {
+  color: white;
+  padding: 10px;
+  background: crimson;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  text-align: center;
+  min-width: 30%;
+  font-family: 'Poppins';
+  text-shadow: black 1px 1px;
+}
+
+body main .todo-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 50vw;
+  max-width: 90vw;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  background-color: oldlace;
+  -webkit-box-shadow: gray 1px 1px 5px 1px;
+          box-shadow: gray 1px 1px 5px 1px;
+  border-radius: 10px;
+  padding: 60px;
+}
+
+body main .todo-wrapper .todo-textarea {
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  background-color: lightcoral;
+  text-shadow: gray 1px 1px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  z-index: 1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  -webkit-box-shadow: gray 1px 1px 2px,gray -1px -1px 2px;
+          box-shadow: gray 1px 1px 2px,gray -1px -1px 2px;
+}
+
+body main .todo-wrapper .todo-list .todo-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  position: relative;
+  -webkit-box-shadow: gray 1px 1px 2px, gray -1px -1px 2px;
+          box-shadow: gray 1px 1px 2px, gray -1px -1px 2px;
+  border-radius: 1px;
+  font-family: 'Poppins', sans-serif;
+  color: coral;
+  background-color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .todo-wrapper .todo-list .todo-list-item:nth-last-child(1) {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+body main .todo-wrapper .todo-list .todo-list-item:hover {
+  background-color: rgba(245, 245, 245, 0.918);
+}
+
+body main .todo-wrapper .todo-list .todo-list-item .item-name {
+  font-size: 18px;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 92%;
+}
+
+body main .todo-wrapper .todo-list .todo-list-item .remove-button {
+  height: 21px;
+  width: 21px;
+  border: none;
+  color: white;
+  background-color: lightgray;
+  border-radius: 50%;
+}
+
+body main .todo-wrapper .todo-list .todo-list-item .remove-button:hover {
+  background-color: red;
+  cursor: pointer;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+body main .todo-wrapper .todo-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 5px;
+}
+
+body main .todo-wrapper .todo-form input {
+  min-width: 79%;
+  font-size: 18px;
+  padding-left: 10px;
+  font-weight: 500;
+  color: gray;
+  border: solid gray 1px;
+  border-radius: 5px;
+}
+
+body main .todo-wrapper .todo-form button {
+  font-size: 14px;
+  padding: 5px;
+  min-height: 40px;
+  width: 21%;
+  z-index: 1;
+  border: gray solid 1px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  background-color: indianred;
+  font-family: 'Poppins', sans-serif;
+}
+
+body main .todo-wrapper .todo-form button:hover {
+  cursor: pointer;
+  background-color: lightcoral;
+}
+
+@media only screen and (max-width: 769px) {
+  .todo-form {
+    margin-top: 10px !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .todo-form input {
+    width: 100%;
+    min-height: 40px !important;
+  }
+  .todo-form button {
+    width: 100% !important;
+    font-size: 16px !important;
+  }
+}
+/*# sourceMappingURL=main.css.map */
