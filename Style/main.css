@@ -118,6 +118,18 @@ body main .todo-wrapper .todo-list .todo-list-item .remove-button {
   color: white;
   background-color: lightgray;
   border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Poppins";
+  font-size: 12px;
+  font-weight: bold;
 }
 
 body main .todo-wrapper .todo-list .todo-list-item .remove-button:hover {
@@ -145,6 +157,9 @@ body main .todo-wrapper .todo-form input {
   color: gray;
   border: solid gray 1px;
   border-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-right: none;
 }
 
 body main .todo-wrapper .todo-form button {
@@ -157,6 +172,8 @@ body main .todo-wrapper .todo-form button {
   border-radius: 5px;
   font-weight: bold;
   color: white;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
   background-color: indianred;
   font-family: 'Poppins', sans-serif;
 }
@@ -167,6 +184,9 @@ body main .todo-wrapper .todo-form button:hover {
 }
 
 @media only screen and (max-width: 769px) {
+  .item-name {
+    font-size: 16px !important;
+  }
   .todo-form {
     margin-top: 10px !important;
     -webkit-box-orient: vertical;
@@ -176,11 +196,20 @@ body main .todo-wrapper .todo-form button:hover {
   }
   .todo-form input {
     width: 100%;
+    border: solid 1px !important;
+    border-radius: 5px !important;
+    font-size: 16px !important;
     min-height: 40px !important;
+    border-bottom: none !important;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
   }
   .todo-form button {
     width: 100% !important;
     font-size: 16px !important;
+    border-radius: 5px !important;
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
   }
 }
 /*# sourceMappingURL=main.css.map */
