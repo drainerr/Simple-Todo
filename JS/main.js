@@ -111,16 +111,15 @@ function removeLocalTasks (todo){
 function filterList(e){
     let text = e.target.value.toLowerCase();
     let items = list.getElementsByTagName('li');
-    Array.from(items).forEach((item) =>{
-        let count = 0;
+    let count = list.childElementCount;
+    Array.from(items).forEach((item) =>{   
         if(item.children[0].tagName == 'P'){
             let task = item.children[0].textContent.toLowerCase();
             if(task.indexOf(text) != -1){
-                item.style.display = "flex";
-                count++;
-                
+                item.style.display = "flex";              
             }else{
                 item.style.display = "none";
+                count--;
             } 
             todoHeader.innerHTML = "You have " + count + " Tasks";
         }
