@@ -22,23 +22,23 @@ function createItem(e){
     let li = document.createElement('li');
     li.classList = "todo-list-item";
 
-    let h3 = document.createElement('h3');
-    h3.classList = "item-name";      
-    h3.innerHTML = todoText;
+    let p = document.createElement('p');
+    p.classList = "item-name";      
+    p.innerHTML = todoText; 
 
     let button = document.createElement('button');
     button.classList = "remove-button";
     button.textContent = 'X';
 
-    li.appendChild(h3);
+    li.appendChild(p);
     li.appendChild(button);
-
-    if(input.value != undefined && input.value != ''){
+   // to make sure that inputted value is text and does not start with an empty space
+    if(input.value != undefined && input.value != '' && !input.value.startsWith(' ')){
         list.appendChild(li);
-        saveLocalTasks(todoText);
+        saveLocalTasks(todoText); // saving text(todo/task) to localStorage.
         input.value = "";
         todoText = "";
-    } else{
+    } else {
         alert("Text must be entered!");
     }
     countItems();
@@ -46,12 +46,12 @@ function createItem(e){
 
 function removeItem(e){
     if(e.target.classList.contains("remove-button")){   
-        let listItem = e.target.parentElement;
-        if(listItem.children[0].tagName == 'H3'){     
+        let listItem = e.target.parentElement; // declaring li element
+        if(listItem.children[0].tagName == 'P'){ // if li element truly contains a paragraph, remove its textContent(task/todo) from localstorage
             let todo = listItem.children[0].innerHTML;
             removeLocalTasks(todo);
         }
-        list.removeChild(listItem);       
+        list.removeChild(listItem);  //removing the entire 'li element' from the list
     }
     countItems();
 }
@@ -73,19 +73,19 @@ function renderLocalTasks(){
     }  else {
         tasks =  JSON.parse(localStorage.getItem('tasks'));
     }
-    tasks.forEach((todo) => {
+    tasks.forEach((todo) => {  // rendering todos
         let li = document.createElement('li');
         li.classList = "todo-list-item";
 
-        let h3 = document.createElement('h3');
-        h3.classList = "item-name";      
-        h3.innerHTML = todo;
+        let p = document.createElement('p');
+        p.classList = "item-name";      
+        p.innerHTML = todo;
 
         let button = document.createElement('button');
         button.classList = "remove-button";
         button.textContent = 'X';
 
-        li.appendChild(h3);
+        li.appendChild(p);
         li.appendChild(button);
         list.appendChild(li);
     });
@@ -99,8 +99,8 @@ function removeLocalTasks (todo){
         tasks =  JSON.parse(localStorage.getItem('tasks'));
     }
     indexOfTodo = tasks.indexOf(todo);
-    tasks.splice(indexOfTodo,1);
-    localStorage.setItem('tasks',JSON.stringify(tasks));
+    tasks.splice(indexOfTodo,1); // removing specific task/todo from an array
+    localStorage.setItem('tasks',JSON.stringify(tasks)); //updating localstorage
 }
 
 

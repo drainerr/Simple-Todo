@@ -109,6 +109,7 @@ body main .todo-wrapper .todo-list .todo-list-item .item-name {
   white-space: normal;
   word-wrap: break-word;
   max-width: 92%;
+  font-weight: bold;
 }
 
 body main .todo-wrapper .todo-list .todo-list-item .remove-button {
