@@ -41,6 +41,22 @@ body header {
   text-shadow: black 1px 1px;
 }
 
+body header .filter-input {
+  height: 25px;
+  width: 70%;
+  font-size: 14px;
+  font-family: 'Poppins';
+  font-weight: bold;
+  color: crimson;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: solid 1.5px black;
+}
+
+body header .filter-input:focus {
+  border-color: wheat;
+}
+
 body main .todo-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -274,6 +290,11 @@ body .popup .popup-button:hover {
 @media only screen and (max-width: 769px) {
   .item-name {
     font-size: 16px !important;
+    max-width: 85% !important;
+  }
+  .todo-wrapper {
+    padding: 30px !important;
+    min-width: 70vw !important;
   }
   .todo-form {
     margin-top: 10px !important;

@@ -5,7 +5,8 @@ const input = document.querySelector('.input-area');
 const todoHeader = document.querySelector('.todo-header');
 const popUp = document.querySelector('.popup');
 const popUpBtn = document.querySelector('.popup-button');
-let todoText, count;
+const filterInput = document.querySelector('.filter-input');
+let todoText, count, tasks = [];
 
 const countItems = () => { 
     count = list.childElementCount;
@@ -13,12 +14,12 @@ const countItems = () => {
 }
 countItems();
 
-
 document.addEventListener('DOMContentLoaded', renderLocalTasks);
 input.addEventListener('input', () => todoText = input.value)
 addBtn.addEventListener('click', createItem);
 list.addEventListener('click', removeItem);
 popUpBtn.addEventListener('click', ()=> popUp.style.display = "none");
+filterInput.addEventListener('input', filterList);
 
 function createItem(e){
     e.preventDefault();
@@ -62,7 +63,6 @@ function removeItem(e){
 }
 
 function saveLocalTasks(todo){
-    let tasks = [];
     if(localStorage.getItem('tasks') === null){
         tasks = [];
     }  else {
@@ -108,6 +108,24 @@ function removeLocalTasks (todo){
     localStorage.setItem('tasks',JSON.stringify(tasks)); //updating localstorage
 }
 
+function filterList(e){
+    let text = e.target.value.toLowerCase();
+    let items = list.getElementsByTagName('li');
+    Array.from(items).forEach((item) =>{
+        let count = 0;
+        if(item.children[0].tagName == 'P'){
+            let task = item.children[0].textContent.toLowerCase();
+            if(task.indexOf(text) != -1){
+                item.style.display = "flex";
+                count++;
+                
+            }else{
+                item.style.display = "none";
+            } 
+            todoHeader.innerHTML = "You have " + count + " Tasks";
+        }
+    })
+}
 
 
 
