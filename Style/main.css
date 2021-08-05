@@ -184,6 +184,95 @@ body main .todo-wrapper .todo-form button:hover {
   background-color: lightcoral;
 }
 
+body .popup {
+  font-family: 'Poppins';
+  height: 160px;
+  width: 340px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-shadow: 1px 1px black;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: solid #4e4747 6px;
+  color: wheat;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 3;
+  -webkit-animation: changeColors 3s;
+          animation: changeColors 3s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-transition: ease-in-out;
+  transition: ease-in-out;
+  display: none;
+}
+
+@-webkit-keyframes changeColors {
+  0% {
+    color: white;
+    border-color: wheat;
+  }
+  50% {
+    color: #ffb8d0;
+    border-color: lightgray;
+  }
+  100% {
+    color: wheat;
+    border-color: rgba(78, 71, 71, 0.746);
+  }
+}
+
+@keyframes changeColors {
+  0% {
+    color: white;
+    border-color: wheat;
+  }
+  50% {
+    color: #ffb8d0;
+    border-color: lightgray;
+  }
+  100% {
+    color: wheat;
+    border-color: rgba(78, 71, 71, 0.746);
+  }
+}
+
+body .popup span {
+  border-bottom: solid 2px;
+}
+
+body .popup .popup-button {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Poppins";
+  padding: 2px 15px;
+  margin-top: 15px;
+  border-radius: 2px;
+  text-shadow: 1px 1px black;
+  background-color: rgba(155, 150, 150, 0.9);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+body .popup .popup-button:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 @media only screen and (max-width: 769px) {
   .item-name {
     font-size: 16px !important;

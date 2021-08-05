@@ -3,6 +3,8 @@ const removeBtn = document.querySelector('.remove-button');
 const addBtn = document.querySelector('.addBtn')
 const input = document.querySelector('.input-area');
 const todoHeader = document.querySelector('.todo-header');
+const popUp = document.querySelector('.popup');
+const popUpBtn = document.querySelector('.popup-button');
 let todoText, count;
 
 const countItems = () => { 
@@ -11,10 +13,12 @@ const countItems = () => {
 }
 countItems();
 
+
 document.addEventListener('DOMContentLoaded', renderLocalTasks);
 input.addEventListener('input', () => todoText = input.value)
 addBtn.addEventListener('click', createItem);
 list.addEventListener('click', removeItem);
+popUpBtn.addEventListener('click', ()=> popUp.style.display = "none");
 
 function createItem(e){
     e.preventDefault();
@@ -39,8 +43,9 @@ function createItem(e){
         input.value = "";
         todoText = "";
     } else {
-        alert("Text must be entered!");
+        popUp.style.display = "flex";
     }
+
     countItems();
 }
 
