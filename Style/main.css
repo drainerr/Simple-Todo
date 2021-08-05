@@ -224,7 +224,6 @@ body .popup {
 @-webkit-keyframes changeColors {
   0% {
     color: white;
-    border-color: wheat;
   }
   50% {
     color: #ffb8d0;
@@ -239,7 +238,6 @@ body .popup {
 @keyframes changeColors {
   0% {
     color: white;
-    border-color: wheat;
   }
   50% {
     color: #ffb8d0;
@@ -263,14 +261,14 @@ body .popup .popup-button {
   margin-top: 15px;
   border-radius: 2px;
   text-shadow: 1px 1px black;
-  background-color: rgba(155, 150, 150, 0.9);
+  background-color: crimson;
   color: white;
-  border: none;
   cursor: pointer;
+  border: none;
 }
 
 body .popup .popup-button:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(155, 150, 150, 0.9);
 }
 
 @media only screen and (max-width: 769px) {

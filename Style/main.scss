@@ -163,7 +163,6 @@ body{
         @keyframes changeColors {
             0%{
                 color:white;
-                border-color:wheat;
             }
             50%{
                 color:rgb(255, 184, 208);
@@ -171,7 +170,6 @@ body{
             }
             100%{
                 color:wheat;
-                
                 border-color:rgba(78, 71, 71, 0.746);
             }
         }
@@ -186,12 +184,12 @@ body{
             margin-top:15px;
             border-radius:2px;
             text-shadow:1px 1px black;
-            background-color:rgba(155, 150, 150, .9);
+            background-color: crimson;
             color:white;
-            border: none;
             cursor:pointer;
-            &:hover{ 
-                background-color: rgba(0, 0, 0, 0.3);
+            border: none;
+            &:hover{      
+                background-color:rgba(155, 150, 150, .9);
             }
         }
     }
