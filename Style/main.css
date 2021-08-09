@@ -13,7 +13,7 @@ body {
   background: -webkit-gradient(linear, left top, right top, from(#e1eec3), to(#f05053));
   background: linear-gradient(to right, #e1eec3, #f05053);
   height: 100%;
-  width: 100vw;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
